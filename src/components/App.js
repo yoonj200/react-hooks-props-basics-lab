@@ -11,8 +11,18 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Home />
-      <About />
+      {/* 'App' passes down data from 'user' object as props to 'Home' component */}
+      <Home 
+        color={user.color}
+        name={user.name}
+        city={user.city}
+      />
+      {/* App passes down data from 'user' object as props to 'About' component  */}
+      <About 
+        bio={user.bio}
+        github={user.links.github}
+        linkedin={user.links.linkedin}
+      />
     </div>
   );
 }
